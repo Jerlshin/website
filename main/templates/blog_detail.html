@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} | My Portfolio</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    {% include 'base.html' %}
+    <div class="main-content">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.date_posted|date:"F j, Y" }}</p>
+        <div>
+            <p>{{ post.content }}</p>
+        </div>
+        <a href="{% url 'blog_home' %}">Back to Blog</a>
+    </div>
+</body>
+</html>
